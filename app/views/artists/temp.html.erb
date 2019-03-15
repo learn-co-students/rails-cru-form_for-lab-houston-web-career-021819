@@ -1,0 +1,80 @@
+# edit
+<form method="POST" action="/artists/<%= @artist.id %>">
+    <input type="hidden" name="_method" value="PATCH" />
+    <div>
+        <h1>My edit </h1>
+    </div>
+    <div>
+        <input type="text" name="artist[name]" value="<%= @artist.name %>" />
+    </div>
+    <div>
+        <input type="text" name="artist[bio]" value="<%= @artist.bio %>" />
+    </div>
+    <input type="submit" value="Update Artist" />
+</form>
+
+# new
+<form method="POST" action="/artists">
+    <div>
+        <label>My artist name </label><input type="text" name="artist[name]" />
+    </div>
+    <div>
+        <label>My Bio</label><input type="text" name="artist[bio]" />
+    </div>
+    <input type="submit" value="Create Artist" />
+</form>
+
+
+edit song
+
+<form method="POST" action="/songs/<%= @song.id %>">
+    <input type="hidden" name="_method" value="PATCH" />
+    <div>
+        <h1>My edit </h1>
+    </div>
+    <div>
+        <input type="text" name="song[name]" value="<%= @song.name %>" />
+    </div>
+    <div>
+        <input type="text" name="song[artist_id]" value="<%= @song.artist_id %>" />
+    </div>
+    <div>
+        <input type="text" name="song[genre_id]" value="<%= @song.genre_id %>" />
+    </div>
+    <input type="submit" value="Update Song" />
+</form>
+
+new song
+
+<form method="POST" action="/songs">
+    <div>
+        <label>My song name </label><input type="text" name="song[name]" />
+    </div>
+    <div>
+        <label>My Genre</label><input type="text" name="song[genre_id]" />
+    </div>
+    <div>
+        <label>My Artist</label><input type="text" name="song[artist_id]" />
+    </div>
+    <input type="submit" value="Create Song" />
+</form>
+
+edit genre
+<form method="POST" action="/genres/<%= @genre.id %>">
+    <input type="hidden" name="_method" value="PATCH" />
+    <div>
+        <h1>My edit </h1>
+    </div>
+    <div>
+        <input type="text" name="genre[name]" value="<%= @genre.name %>" />
+    </div>
+    <input type="submit" value="Update Genre" />
+</form>
+
+new genre
+<form method="POST" action="/genres">
+    <div>
+        <label>My genre name </label><input type="text" name="genre[name]" />
+    </div>
+    <input type="submit" value="Create Genre" />
+</form>

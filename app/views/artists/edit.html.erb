@@ -1,13 +1,9 @@
-<form method="POST" action="/artists/<%= @artist.id %>">
-    <input type="hidden" name="_method" value="PATCH" />
-    <div>
-        <h1>My edit </h1>
-    </div>
-    <div>
-        <input type="text" name="artist[name]" value="<%= @artist.name %>" />
-    </div>
-    <div>
-        <input type="text" name="artist[bio]" value="<%= @artist.bio %>" />
-    </div>
-    <input type="submit" value="Update Artist" />
-</form>
+<%= form_for(@artist) do | f |%>
+    <label>My artist name</label><br>
+    <%= f.text_field :name%><br>
+
+    <label>My artist bio</label><br>
+    <%= f.text_area :bio %><br>
+
+    <%= f.submit %>
+<% end %>

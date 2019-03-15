@@ -11,6 +11,7 @@ class SongsController < ApplicationController
     end
 
     def new
+        @song = Song.create
     end
 
     def update
