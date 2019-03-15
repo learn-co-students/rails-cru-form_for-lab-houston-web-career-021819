@@ -1,9 +1,9 @@
-<form method="POST" action="/artists">
-    <div>
-        <label>My artist name </label><input type="text" name="artist[name]" />
-    </div>
-    <div>
-        <label>My Bio</label><input type="text" name="artist[bio]" />
-    </div>
-    <input type="submit" value="Create Artist" />
-</form>
+<%= form_for(@artist) do | f |%>
+    <label>My artist name</label><br>
+    <%= f.text_field :name %><br>
+
+    <label>My artist bio</label><br>
+    <%= f.text_area :bio %><br>
+
+    <%= f.submit "Create Artist"%>
+<% end %>   

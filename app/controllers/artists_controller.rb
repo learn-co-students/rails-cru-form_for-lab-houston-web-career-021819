@@ -11,6 +11,7 @@ class ArtistsController < ApplicationController
     end
 
     def new
+        @artist = Artist.create
     end
 
     def update
@@ -24,8 +25,8 @@ class ArtistsController < ApplicationController
     end
 
     def create
-        artist = Artist.create(artist_params[:artist])
-        redirect_to artist
+        @artist = Artist.create(artist_params[:artist])
+        redirect_to @artist
     end
 
     def artist_params
