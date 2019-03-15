@@ -25,7 +25,7 @@ describe 'form' do
   it 'shows a new form that submits content and redirects and prints out params' do
     visit new_artist_path
 
-    fill_in 'artist[name]', with: "My artist name"
+    fill_in 'artist[name]', with: "My artist name" 
     fill_in 'artist[bio]', with: "My artist bio"
 
     click_on "Create Artist"
