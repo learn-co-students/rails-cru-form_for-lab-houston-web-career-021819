@@ -14,8 +14,12 @@ class SongsController < ApplicationController
     end
 
     def create 
-    @song = Song.create(song_params(:name,:artist_id,:genre_id))
-    redirect_to action: "show", id: @song.id
+        if params[:song][:name]!=""
+            @song = Song.create(song_params(:name,:artist_id,:genre_id))
+        else
+            raise "Enter a name!"
+        end
+        redirect_to action: "show", id: @song.id
     end
 
     def edit 

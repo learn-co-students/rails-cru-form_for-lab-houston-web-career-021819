@@ -12,8 +12,12 @@ class GenresController < ApplicationController
     end
 
     def create 
-    @genre = Genre.create(genre_params(:name))
-    redirect_to action: "show", id: @genre.id
+        if params[:genre][:name]!=""
+            @genre = Genre.create(genre_params(:name))
+        else
+            raise "Enter a name!"
+        end
+        redirect_to action: "show", id: @genre.id
     end
 
     def edit

@@ -12,7 +12,11 @@ class ArtistsController < ApplicationController
     end
 
     def create 
-        @artist = Artist.create(artist_params(:name,:bio))
+        if params[:artist][:name]!=""
+            @artist = Artist.create(artist_params(:name,:bio))
+        else
+            raise "Enter a name!"
+        end
         redirect_to action: "show", id: @artist.id
     end
 
