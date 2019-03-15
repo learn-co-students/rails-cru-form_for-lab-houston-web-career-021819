@@ -1,0 +1,11 @@
+<h2>All Songs</h2>
+<p>
+<%= Song.last.name %>
+</p>
+
+
+<p>
+    <% @songs.each do |song| %>
+        <li style="list-style-type: none;"><a href="/songs/<%= song.id%>"><%= song.name%></a></li>
+        <% end %>
+</p>
