@@ -1,0 +1,7 @@
+<div>
+<%@genres.each do |genre|%>
+ <h1><%= genre.name%></h1>
+ <%end%>
+</div> 
+<%= link_to 'Artists', artists_url %>
+<%= link_to 'Songs', songs_url  %>

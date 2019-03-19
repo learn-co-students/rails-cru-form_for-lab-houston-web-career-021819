@@ -1,0 +1,12 @@
+<h1>My edit</h1>
+<div>
+<form method = 'POST' action = '/artists/<%=@artist.id%>'>
+<input type="hidden" name="_method" value="PATCH">
+<label>Enter Artist Name</label>
+<input type='text' name = 'artist[name]' value='<%@artist.name%>' />
+<label>Enter the Bio<label/>
+<input type='text' name = 'artist[bio]' value='<%@artist.bio%>'/>
+<input type='submit' value = 'Update Artist'/>
+
+</form>
+</div> 
