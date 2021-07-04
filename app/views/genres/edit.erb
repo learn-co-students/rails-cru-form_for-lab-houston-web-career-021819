@@ -1,0 +1,9 @@
+<h1><%=@genre.name%></h1>
+<form method="POST" action="/genres/<%= @genre.id %>">
+    <input type="hidden" name="_method" value="PATCH" />
+<div>
+    <label><%= @genre.name %></label>
+    <input type="text" name="genre[name]" id="genre[name]"></input>
+</div>
+<input type="submit" value="Update Genre">
+</form>
